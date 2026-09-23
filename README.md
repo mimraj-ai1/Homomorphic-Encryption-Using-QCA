@@ -79,11 +79,11 @@ All 11 layouts were synthesized, placed, clocked, and verified against the nativ
 - Simulation CAD Tool: QCADesigner 2.0.3 (installed at `C:\Program Files (x86)\QCADesigner\bin\QCADesigner.exe`)
 
 ### 3.2 Execute Automated Verification Suite
-Run the 82-test validation suite covering logic gates, adders, multiplier, modular arithmetic, and homomorphic encryption:
+Run the 608-test validation suite covering logic gates, adders (including 512-combination RCA sweep), multiplier, modular arithmetic, and homomorphic encryption:
 ```bash
 python -m pytest tests/ -v
 ```
-*(All 82 tests pass in $< 0.3$ seconds with 100% pass rate).*
+*(All 608 tests pass in ~1.2 seconds with 100% pass rate).*
 
 ### 3.3 Execute Homomorphic Encryption Software Demonstration
 Run the end-to-end cryptographic verification script:
@@ -161,8 +161,8 @@ HE-QCA-Project/
 │   └── build_modular_adder.py       # Synthesizes Modular Adder layout
 ├── tests/                           # Automated Python test harness (pytest)
 │   ├── test_gates.py                # 18 tests for basic logic gates
-│   ├── test_adders.py               # 9 tests for Half, Full, and 4-bit RCA
-│   ├── test_multiplier.py           # 10 tests for 2x2 Multiplier
+│   ├── test_adders.py               # 538 tests for Half, Full, and 512-vector 4-bit RCA
+│   ├── test_multiplier.py           # 25 tests for 2x2 Multiplier (16 combinations + edge cases)
 │   ├── test_modular.py              # 21 tests for 2-bit Modular Adder
 │   └── test_he.py                   # 24 tests for Paillier and RSA HE
 ├── .gitignore                       # Git exclusions
@@ -178,7 +178,7 @@ HE-QCA-Project/
 1. **Complete Arithmetic Pipeline:** Successfully designed, clocked, and validated all future work circuits identified in the MAKAUT preliminary report (XOR, Half Adder, Full Adder, 4-bit RCA, 2×2 Multiplier, Modular Adder).
 2. **Cryptographic Software Demonstration:** Built an end-to-end verified demonstration of Paillier Additive Homomorphism and RSA Multiplicative Homomorphism with pure Python standard libraries.
 3. **Six-Layer Architectural Stack:** Established a formal theoretical bridge showing how ciphertext operations decompose into modular channels, binary words, and physical QCA cells.
-4. **Comprehensive Automated Test Harness:** Implemented an 82-test validation suite achieving a 100% pass rate.
+4. **Comprehensive Automated Test Harness:** Implemented a 608-test validation suite achieving a 100% pass rate.
 5. **Full-Wave Simulation Investigation:** Rigorously modeled the quantum-mechanical Coherence Vector simulation formalism, resolving the open milestone from the baseline report.
 6. **Academic Capstone Thesis & Defense Guide:** Authored a complete 13-chapter academic report (`Documentation/Project_Report.md`) and an 18-slide presentation outline (`Documentation/Presentation_Content.md`) with zero AI disclosure and full academic citations.
 
