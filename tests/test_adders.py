@@ -242,14 +242,24 @@ def test_rca_4bit_required_project_vectors():
         assert total_decimal == (a + b + cin), f"Decimal sum failed for {a} + {b} + {cin}"
 
 
-def test_rca_4bit_exhaustive_all_256_combinations():
-    """Exhaustive check across all 16 x 16 = 256 input combinations for 4-bit addition."""
-    for a in range(16):
-        for b in range(16):
-            s, cout = rca_4bit_logic(a, b, cin=0)
-            expected_total = a + b
-            actual_total = (cout << 4) | s
-            assert actual_total == expected_total, f"RCA failed for {a} + {b}"
+@pytest.mark.parametrize("cin", [0, 1])
+@pytest.mark.parametrize("b", list(range(16)))
+@pytest.mark.parametrize("a", list(range(16)))
+def test_rca_4bit_all_512_combinations(a, b, cin):
+    """
+    Exhaustive verification of all 16 x 16 x 2 = 512 input combinations:
+      A = 0–15
+      B = 0–15
+      Cin = 0–1
+    Confirms: A + B + Cin == S + (Cout * 16) for every test case.
+    """
+    s, cout = rca_4bit_logic(a, b, cin)
+    actual_total = s + (cout * 16)
+    expected_total = a + b + cin
+    assert actual_total == expected_total, (
+        f"RCA 4-bit addition mismatch for A={a} ({bin(a)}), B={b} ({bin(b)}), Cin={cin}: "
+        f"expected {expected_total}, got S={s} ({bin(s)}), Cout={cout} (evaluated={actual_total})"
+    )
 
 
 # ============================================================================

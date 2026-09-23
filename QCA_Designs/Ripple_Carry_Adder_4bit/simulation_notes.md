@@ -39,13 +39,18 @@
 | Test Case | Inputs ($A + B + C_{in}$) | Expected Result ($C_{out}, S_3 S_2 S_1 S_0$) | Observed Waveform States | Verification Status |
 | :---: | :---: | :---: | :---: | :---: |
 | 1 | $0000 + 0000 + 0$ | `0` and `0000` | `[Pending Manual Run]` | PENDING |
-| 2 | $0001 + 0001 + 0$ | `0` and `0010` | `[Pending Manual Run]` | PENDING |
-| 3 | $0011 + 0010 + 0$ | `0` and `0101` | `[Pending Manual Run]` | PENDING |
-| 4 | $0101 + 0011 + 0$ | `0` and `1000` | `[Pending Manual Run]` | PENDING |
-| 5 | $0111 + 0001 + 0$ | `0` and `1000` | `[Pending Manual Run]` | PENDING |
-| 6 | $1010 + 0011 + 0$ | `0` and `1101` | `[Pending Manual Run]` | PENDING |
-| 7 | $1111 + 0001 + 0$ | `1` and `0000` | `[Pending Manual Run]` | PENDING |
-| 8 | $1111 + 1111 + 0$ | `1` and `1110` | `[Pending Manual Run]` | PENDING |
+| 2 | $0000 + 0000 + 1$ | `0` and `0001` | `[Pending Manual Run]` | PENDING |
+| 3 | $0001 + 0001 + 0$ | `0` and `0010` | `[Pending Manual Run]` | PENDING |
+| 4 | $0001 + 0001 + 1$ | `0` and `0011` | `[Pending Manual Run]` | PENDING |
+| 5 | $0011 + 0010 + 0$ | `0` and `0101` | `[Pending Manual Run]` | PENDING |
+| 6 | $0101 + 0011 + 0$ | `0` and `1000` | `[Pending Manual Run]` | PENDING |
+| 7 | $0111 + 0001 + 0$ | `0` and `1000` | `[Pending Manual Run]` | PENDING |
+| 8 | $0111 + 0001 + 1$ | `0` and `1001` | `[Pending Manual Run]` | PENDING |
+| 9 | $1010 + 0011 + 0$ | `0` and `1101` | `[Pending Manual Run]` | PENDING |
+| 10 | $1111 + 0001 + 0$ | `1` and `0000` | `[Pending Manual Run]` | PENDING |
+| 11 | $1111 + 0001 + 1$ | `1` and `0001` | `[Pending Manual Run]` | PENDING |
+| 12 | $1111 + 1111 + 0$ | `1` and `1110` | `[Pending Manual Run]` | PENDING |
+| 13 | $1111 + 1111 + 1$ | `1` and `1111` | `[Pending Manual Run]` | PENDING |
 
 ---
 
