@@ -40,21 +40,19 @@ def multiplier_2x2_logic(a1: int, a0: int, b1: int, b0: int) -> tuple[int, int, 
     return (p3, p2, p1, p0)
 
 
-def test_multiplier_all_16_combinations():
-    """Exhaustively verify all 16 combinations for 2x2 multiplication."""
-    for a1 in (0, 1):
-        for a0 in (0, 1):
-            for b1 in (0, 1):
-                for b0 in (0, 1):
-                    a_val = (a1 << 1) | a0
-                    b_val = (b1 << 1) | b0
-                    p3, p2, p1, p0 = multiplier_2x2_logic(a1, a0, b1, b0)
+@pytest.mark.parametrize("b_val", [0, 1, 2, 3])
+@pytest.mark.parametrize("a_val", [0, 1, 2, 3])
+def test_multiplier_all_16_combinations(a_val, b_val):
+    """Exhaustively verify all 16 combinations (4x4) for 2x2 binary multiplication."""
+    a1, a0 = (a_val >> 1) & 1, a_val & 1
+    b1, b0 = (b_val >> 1) & 1, b_val & 1
+    p3, p2, p1, p0 = multiplier_2x2_logic(a1, a0, b1, b0)
 
-                    actual_product = (p3 << 3) | (p2 << 2) | (p1 << 1) | p0
-                    expected_product = a_val * b_val
-                    assert actual_product == expected_product, (
-                        f"Multiplier failed for {a_val} x {b_val}: got {actual_product}, expected {expected_product}"
-                    )
+    actual_product = (p3 << 3) | (p2 << 2) | (p1 << 1) | p0
+    expected_product = a_val * b_val
+    assert actual_product == expected_product, (
+        f"Multiplier failed for {a_val} x {b_val}: got {actual_product}, expected {expected_product}"
+    )
 
 
 @pytest.mark.parametrize(

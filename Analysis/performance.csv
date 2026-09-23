@@ -8,3 +8,4 @@ XOR,91,0.113004 um^2,4 (Clock 0-3),1.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFI
 Half_Adder,91,0.113004 um^2,4 (Clock 0-3),1.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Dual-rail M(M(A B 1) NOT(M(A B 0)) 0) with SUM and CARRY; verified layout in QCADesigner 2.0.3
 Full_Adder,75,0.069324 um^2,4 (Clock 0-3),1.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Tougaw-Lent 3-Majority-Voter architecture; verified layout in QCADesigner 2.0.3
 Ripple_Carry_Adder_4bit,315,0.291684 um^2,4 (Clock 0-3),4.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,4-stage cascaded FA0-FA3 with carry ripples; verified layout in QCADesigner 2.0.3
+Multiplier_2x2,91,0.075684 um^2,4 (Clock 0-3),1.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,4 AND partial products accumulated via two Half Adders; verified layout in QCADesigner 2.0.3

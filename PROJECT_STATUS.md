@@ -16,9 +16,9 @@
 
 ## Current Status
 
-- **Current Phase:** Phase 5 — 4-bit Ripple Carry Adder (RCA) Implementation
+- **Current Phase:** Phase 6 — 2×2 Binary Multiplier Implementation
 - **Phase Status:** Complete
-- **Next Step:** Phase 6 — 2×2 Binary Multiplier Implementation
+- **Next Step:** Phase 7 — Modular Arithmetic ($(a + b) \pmod N$) Implementation
 
 ---
 
@@ -32,12 +32,12 @@
 | **Phase 3** | Half Adder Implementation | **COMPLETED** | 91-cell dual-rail layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 4** | Full Adder Implementation | **COMPLETED** | 75-cell Tougaw-Lent layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 5** | 4-bit Ripple Carry Adder (RCA) | **COMPLETED** | 315-cell 4-stage layout verified in QCADesigner 2.0.3; 512/512 exhaustive tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
-| **Phase 6** | 2×2 Binary Multiplier | NOT STARTED | Pending Phase 6 authorization |
-| **Phase 7** | Modular Arithmetic ($(a + b) \pmod N$) | NOT STARTED | Pending Phase 6 completion |
+| **Phase 6** | 2×2 Binary Multiplier | **COMPLETED** | 91-cell dual-HA layout verified in QCADesigner 2.0.3; all 16 multiplication tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
+| **Phase 7** | Modular Arithmetic ($(a + b) \pmod N$) | NOT STARTED | Pending Phase 7 authorization |
 | **Phase 8** | Homomorphic Encryption (HE) Python Demonstration | NOT STARTED | Pending Phase 7 completion |
 | **Phase 9** | QCA / HE Technical Architecture Integration | NOT STARTED | Pending Phase 8 completion |
-| **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | PARTIALLY STARTED | Metrics logged for Phases 1–5 in `Analysis/performance.csv` |
-| **Phase 11** | Automated Testing Suite (`pytest`) | PARTIALLY COMPLETED | Core gates and adders suites active (538 tests passing) |
+| **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | PARTIALLY STARTED | Metrics logged for Phases 1–6 in `Analysis/performance.csv` |
+| **Phase 11** | Automated Testing Suite (`pytest`) | PARTIALLY COMPLETED | Core gates, adders, and multiplier suites active (608 tests passing) |
 | **Phase 12** | Full-Wave Simulation Investigation | NOT STARTED | Pending Phase 11 completion |
 | **Phase 13** | Academic Documentation | NOT STARTED | Pending Phase 12 completion |
 | **Phase 14** | Presentation & Project Diary | NOT STARTED | Pending Phase 13 completion |
@@ -71,6 +71,7 @@
 | **Half Adder** | 91 | $438.0\text{ nm} \times 258.0\text{ nm}$ | $0.113004\ \mu\text{m}^2$ | 4 (Clock 0-3) | 1.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 | **Full Adder** | 75 | $318.0\text{ nm} \times 218.0\text{ nm}$ | $0.069324\ \mu\text{m}^2$ | 4 (Clock 0-3) | 1.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 | **4-bit RCA** | 315 | $1338.0\text{ nm} \times 218.0\text{ nm}$ | $0.291684\ \mu\text{m}^2$ | 4 (Clock 0-3) | 4.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
+| **2×2 Multiplier** | 91 | $318.0\text{ nm} \times 238.0\text{ nm}$ | $0.075684\ \mu\text{m}^2$ | 4 (Clock 0-3) | 1.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 
 ---
 
