@@ -16,9 +16,9 @@
 
 ## Current Status
 
-- **Current Phase:** Phase 3 — Half Adder Implementation
+- **Current Phase:** Phase 4 — Full Adder Implementation
 - **Phase Status:** Complete
-- **Next Step:** Phase 4 — Full Adder Implementation
+- **Next Step:** Phase 5 — 4-bit Ripple Carry Adder (RCA) Implementation
 
 ---
 
@@ -29,15 +29,15 @@
 | **Phase 0** | Project Initialization, Tool Discovery & Baseline Analysis | **COMPLETED** | Verified (File tree, tools detected, `PROJECT_BASELINE.md` generated) |
 | **Phase 1** | Basic QCA Logic Gates (AND, OR, NOT, NAND, NOR) | **COMPLETED** | Layout files verified in QCADesigner 2.0.3; unit tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 2** | XOR Gate Implementation | **COMPLETED** | 91-cell dual-rail layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
-| **Phase 3** | Half Adder Implementation | **COMPLETED** | 91-cell dual-rail layout verified in QCADesigner 2.0.3; 21/21 tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
-| **Phase 4** | Full Adder Implementation | PLANNED | Pending Phase 4 execution |
+| **Phase 3** | Half Adder Implementation | **COMPLETED** | 91-cell dual-rail layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
+| **Phase 4** | Full Adder Implementation | **COMPLETED** | 75-cell Tougaw-Lent layout verified in QCADesigner 2.0.3; 24/24 tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 5** | 4-bit Ripple Carry Adder (RCA) | PLANNED | Pending Phase 5 execution |
 | **Phase 6** | 2×2 Binary Multiplier | PLANNED | Pending Phase 6 execution |
 | **Phase 7** | Modular Arithmetic ($(a + b) \pmod N$) | PLANNED | Pending Phase 7 execution |
 | **Phase 8** | Homomorphic Encryption (HE) Python Demonstration | PLANNED | Pending Phase 8 execution |
 | **Phase 9** | QCA / HE Technical Architecture Integration | PLANNED | Pending Phase 9 execution |
-| **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | IN PROGRESS | Measured metrics for 7 circuits logged to `Analysis/performance.csv` |
-| **Phase 11** | Automated Testing Suite (`pytest`) | IN PROGRESS | `tests/test_gates.py` and `tests/test_adders.py` passing (21 tests) |
+| **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | IN PROGRESS | Measured metrics for 8 circuits logged to `Analysis/performance.csv` |
+| **Phase 11** | Automated Testing Suite (`pytest`) | IN PROGRESS | `tests/test_gates.py` and `tests/test_adders.py` passing (24 tests) |
 | **Phase 12** | Full-Wave Simulation Investigation | PLANNED | Pending Phase 12 execution |
 | **Phase 13** | Comprehensive Academic Thesis Documentation | PLANNED | Pending Phase 13 execution |
 | **Phase 14** | Presentation Content & Chronological Project Diary | PLANNED | Pending Phase 14 execution |
@@ -48,12 +48,12 @@
 
 | Tool / Dependency | Detected Path / Version | Operational Status | Notes |
 | :--- | :--- | :--- | :--- |
-| **QCADesigner** | `C:\Program Files (x86)\QCADesigner\bin\QCADesigner.exe` (v2.0.3) | Available | Native Win32 GUI tool. All 7 gate/adder layouts verified to open cleanly. |
+| **QCADesigner** | `C:\Program Files (x86)\QCADesigner\bin\QCADesigner.exe` (v2.0.3) | Available | Native Win32 GUI tool. All 8 gate/adder layouts verified to open cleanly. |
 | **Python** | Python 3.10.11 (64-bit) | Available | System Python verified; executes circuit builders and test suites. |
 | **Git** | git version 2.49.0.windows.1 | Available | Clean Git repository initialized at `HE-QCA-Project/` on branch `main`. |
 | **NumPy** | Version 2.2.6 | Available | Operational for vector math and arithmetic testing. |
 | **Matplotlib** | Version 3.10.8 | Available | Operational for performance graphing. |
-| **pytest** | Version 8.3.3 | Available | Operational for test harness execution (21/21 passing). |
+| **pytest** | Version 8.3.3 | Available | Operational for test harness execution (24/24 passing). |
 
 ---
 
@@ -68,6 +68,7 @@
 | **NOR** | 7 | $98.0\text{ nm} \times 58.0\text{ nm}$ | $0.005684\ \mu\text{m}^2$ | 1 (Clock 0) | 0.25 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 | **XOR** | 91 | $438.0\text{ nm} \times 258.0\text{ nm}$ | $0.113004\ \mu\text{m}^2$ | 4 (Clock 0-3) | 1.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 | **Half Adder** | 91 | $438.0\text{ nm} \times 258.0\text{ nm}$ | $0.113004\ \mu\text{m}^2$ | 4 (Clock 0-3) | 1.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
+| **Full Adder** | 75 | $318.0\text{ nm} \times 218.0\text{ nm}$ | $0.069324\ \mu\text{m}^2$ | 4 (Clock 0-3) | 1.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 
 ---
 

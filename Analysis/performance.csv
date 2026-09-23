@@ -6,6 +6,6 @@ NAND,7,0.005684 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFIC
 NOR,7,0.005684 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Majority OR cascaded with diagonal inverter; layout verified in QCADesigner 2.0.3
 XOR,91,0.113004 um^2,4 (Clock 0-3),1.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Dual-rail M(M(A B 1) NOT(M(A B 0)) 0); verified layout in QCADesigner 2.0.3
 Half_Adder,91,0.113004 um^2,4 (Clock 0-3),1.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Dual-rail M(M(A B 1) NOT(M(A B 0)) 0) with SUM and CARRY; verified layout in QCADesigner 2.0.3
-Full_Adder,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 4
+Full_Adder,75,0.069324 um^2,4 (Clock 0-3),1.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Tougaw-Lent 3-Majority-Voter architecture; verified layout in QCADesigner 2.0.3
 Ripple_Carry_Adder_4bit,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 5
 Multiplier_2x2,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 6
