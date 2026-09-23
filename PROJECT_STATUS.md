@@ -16,9 +16,9 @@
 
 ## Current Status
 
-- **Current Phase:** Phase 7 — Modular Arithmetic ($(a + b) \pmod N$) Implementation
+- **Current Phase:** Phase 8 — Homomorphic Encryption (HE) Python Demonstration
 - **Phase Status:** Complete
-- **Next Step:** Phase 8 — Homomorphic Encryption (HE) Python Demonstration
+- **Next Step:** Phase 9 — QCA / HE Technical Architecture Integration
 
 ---
 
@@ -34,10 +34,10 @@
 | **Phase 5** | 4-bit Ripple Carry Adder (RCA) | **COMPLETED** | 315-cell 4-stage layout verified in QCADesigner 2.0.3; 512/512 exhaustive tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 6** | 2×2 Binary Multiplier | **COMPLETED** | 91-cell dual-HA layout verified in QCADesigner 2.0.3; all 16 multiplication tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 7** | Modular Arithmetic ($(a + b) \pmod N$) | **COMPLETED** | 177-cell 2-stage layout verified in QCADesigner 2.0.3; all 16 modular addition tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
-| **Phase 8** | Homomorphic Encryption (HE) Python Demonstration | NOT STARTED | Pending Phase 8 authorization |
-| **Phase 9** | QCA / HE Technical Architecture Integration | NOT STARTED | Pending Phase 8 completion |
+| **Phase 8** | Homomorphic Encryption (HE) Python Demonstration | **COMPLETED** | Verified (24 tests passing; Paillier add/scalar/sub, RSA mul, hardware decomposition mapped) |
+| **Phase 9** | QCA / HE Technical Architecture Integration | NOT STARTED | Pending Phase 9 authorization |
 | **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | PARTIALLY STARTED | Metrics logged for Phases 1–7 in `Analysis/performance.csv` |
-| **Phase 11** | Automated Testing Suite (`pytest`) | PARTIALLY COMPLETED | Core gates, adders, multiplier, and modular suites active (608 tests passing) |
+| **Phase 11** | Automated Testing Suite (`pytest`) | PARTIALLY COMPLETED | Core gates, adders, multiplier, modular, and HE suites active (608 tests passing) |
 | **Phase 12** | Full-Wave Simulation Investigation | NOT STARTED | Pending Phase 11 completion |
 | **Phase 13** | Academic Documentation | NOT STARTED | Pending Phase 12 completion |
 | **Phase 14** | Presentation & Project Diary | NOT STARTED | Pending Phase 13 completion |
