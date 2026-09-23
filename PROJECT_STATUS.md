@@ -16,9 +16,9 @@
 
 ## Current Status
 
-- **Current Phase:** Phase 8 — Homomorphic Encryption (HE) Python Demonstration
+- **Current Phase:** Phase 9 — QCA / HE Technical Architecture Integration
 - **Phase Status:** Complete
-- **Next Step:** Phase 9 — QCA / HE Technical Architecture Integration
+- **Next Step:** Phase 10 — Quantitative Performance Characterization Finalization
 
 ---
 
@@ -35,7 +35,7 @@
 | **Phase 6** | 2×2 Binary Multiplier | **COMPLETED** | 91-cell layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 7** | Modular Arithmetic ($(a + b) \pmod N$) | **COMPLETED** | 177-cell layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 8** | Homomorphic Encryption (HE) Python Demonstration | **COMPLETED** | Paillier & RSA engines implemented; end-to-end demo verified; 82/82 tests passing |
-| **Phase 9** | QCA / HE Technical Architecture Integration | PLANNED | Pending Phase 9 execution |
+| **Phase 9** | QCA / HE Technical Architecture Integration | **COMPLETED** | Six-layer architecture, mapping matrix, area budget, and integrity boundaries documented in `Documentation/HE_QCA_Architecture.md` |
 | **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | IN PROGRESS | Measured metrics for all 11 circuits logged to `Analysis/performance.csv` |
 | **Phase 11** | Automated Testing Suite (`pytest`) | IN PROGRESS | `test_gates.py`, `test_adders.py`, `test_multiplier.py`, `test_modular.py`, `test_he.py` passing (82 tests) |
 | **Phase 12** | Full-Wave Simulation Investigation | PLANNED | Pending Phase 12 execution |
