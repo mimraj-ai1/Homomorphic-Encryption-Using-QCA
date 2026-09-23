@@ -16,9 +16,9 @@
 
 ## Current Status
 
-- **Current Phase:** Phase 9 — QCA / HE Technical Architecture Integration
+- **Current Phase:** Phase 11 — Automated Testing Suite (`pytest`)
 - **Phase Status:** Complete
-- **Next Step:** Phase 10 — Quantitative Performance Characterization (`performance.csv` & Plots)
+- **Next Step:** Phase 12 — Full-Wave / Coherence Vector Simulation Investigation
 
 ---
 
@@ -36,9 +36,9 @@
 | **Phase 7** | Modular Arithmetic ($(a + b) \pmod N$) | **COMPLETED** | 177-cell 2-stage layout verified in QCADesigner 2.0.3; all 16 modular addition tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 8** | Homomorphic Encryption (HE) Python Demonstration | **COMPLETED** | Verified (24 tests passing; Paillier add/scalar/sub, RSA mul, hardware decomposition mapped) |
 | **Phase 9** | QCA / HE Technical Architecture Integration | **COMPLETED** | Verified (6-layer architecture, mapping matrix, latency and area budgeting in `Documentation/HE_QCA_Architecture.md`) |
-| **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | PARTIALLY STARTED | Metrics logged for Phases 1–7 in `Analysis/performance.csv` |
-| **Phase 11** | Automated Testing Suite (`pytest`) | PARTIALLY COMPLETED | Core gates, adders, multiplier, modular, and HE suites active (608 tests passing) |
-| **Phase 12** | Full-Wave Simulation Investigation | NOT STARTED | Pending Phase 11 completion |
+| **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | **COMPLETED** | Verified (11 circuits characterized in `performance.csv`, 5 plots generated in `Analysis/plots/`) |
+| **Phase 11** | Automated Testing Suite (`pytest`) | **COMPLETED** | Verified (608/608 automated tests passing across 5 test modules) |
+| **Phase 12** | Full-Wave Simulation Investigation | NOT STARTED | Pending Phase 12 authorization |
 | **Phase 13** | Academic Documentation | NOT STARTED | Pending Phase 12 completion |
 | **Phase 14** | Presentation & Project Diary | NOT STARTED | Pending Phase 13 completion |
 | **Phase 15** | Final Validation & Master README | NOT STARTED | Pending Phase 14 completion |
