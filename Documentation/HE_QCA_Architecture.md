@@ -2,7 +2,7 @@
 
 **Project Title:** Homomorphic Encryption Using Quantum-dot Cellular Automata (QCA)  
 **Academic Context:** Department of Information Technology, Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal  
-**Investigators:** Subhadip Dutta (Roll: 10000224076), SK Mimraj (Roll: 10000224077)  
+**Investigators:** Subhadip Dutta, SK Mimraj  
 **Supervisor:** Dr. Jadav Chandra Das  
 
 ---

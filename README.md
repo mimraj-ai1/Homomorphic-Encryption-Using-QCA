@@ -4,8 +4,8 @@
 **Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal, India**  
 **Supervision:** Dr. Jadav Chandra Das  
 **Student Investigators:**  
-- **Subhadip Dutta** (Roll: `10000224076`, Reg: `241000121037`)  
-- **SK Mimraj** (Roll: `10000224077`, Reg: `241000121038`)  
+- **Subhadip Dutta**  
+- **SK Mimraj**  
 
 ---
 

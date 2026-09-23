@@ -3,7 +3,7 @@
 **Thesis Title:** Homomorphic Encryption Using Quantum-dot Cellular Automata (QCA)  
 **Academic Institution:** Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal  
 **Department:** Department of Information Technology  
-**Presenters:** Subhadip Dutta (Roll: 10000224076), SK Mimraj (Roll: 10000224077)  
+**Presenters:** Subhadip Dutta, SK Mimraj  
 **Supervisor:** Dr. Jadav Chandra Das  
 
 ---
@@ -14,7 +14,7 @@
 - **Visuals:** Department crest of MAKAUT, title header, schematic diagram of a 4-dot QCA cell alongside a Paillier homomorphic evaluation pipeline.
 - **Key Points:**
   - B.Tech Final-Year Capstone Thesis Defense (Department of Information Technology, MAKAUT, West Bengal).
-  - Student Investigators: Subhadip Dutta (Roll: 10000224076) and SK Mimraj (Roll: 10000224077).
+  - Student Investigators: Subhadip Dutta and SK Mimraj.
   - Under the academic supervision of Dr. Jadav Chandra Das.
 - **Speaker Notes:**
   > "Good morning, respected external examiner, Head of the Department, and faculty members. Today, my co-investigator SK Mimraj and I are honored to present our B.Tech final-year capstone thesis titled 'Homomorphic Encryption Using Quantum-dot Cellular Automata (QCA)', conducted under the supervision of Dr. Jadav Chandra Das. In this project, we explore the intersection of cutting-edge privacy-preserving cryptography and emerging post-CMOS quantum nanotechnology."

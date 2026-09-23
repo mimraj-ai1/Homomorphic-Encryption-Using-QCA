@@ -5,7 +5,7 @@
 - **Project Title:** Homomorphic Encryption Using Quantum-dot Cellular Automata (QCA)
 - **Academic Context:** B.Tech Final-Year Academic Project, Department of Information Technology, Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal, India.
 - **Supervision:** Dr. Jadav Chandra Das
-- **Investigators:** Subhadip Dutta (Roll No: 10000224076, Reg No: 241000121037), SK Mimraj (Roll No: 10000224077, Reg No: 241000121038)
+- **Investigators:** Subhadip Dutta, SK Mimraj
 - **Academic Baseline:** Phase-1 preliminary report analyzed and documented in [Documentation/PROJECT_BASELINE.md](file:///c:/Users/sekhm/Desktop/HE-QCA-Project/Documentation/PROJECT_BASELINE.md).
 - **Core Premise:** Homomorphic encryption permits computation directly on ciphertexts. QCA provides a post-CMOS, nanoscale, ultra-low-power physical hardware architecture for implementing the arithmetic (addition, multiplication, modular reduction) and binary logic required to evaluate encrypted data.
 - **Fundamental Architectural Flow:**

@@ -13,13 +13,9 @@
 
 ### Submitted By:
 - **Subhadip Dutta**  
-  University Roll Number: `10000224076`  
-  University Registration Number: `241000121037`  
   Degree: Bachelor of Technology (Information Technology)
 
 - **SK Mimraj**  
-  University Roll Number: `10000224077`  
-  University Registration Number: `241000121038`  
   Degree: Bachelor of Technology (Information Technology)
 
 ### Under the Supervision of:
@@ -39,8 +35,8 @@ We affirm that:
 3. In accordance with university research integrity standards, measured physical layout metrics (cell counts, bounding box areas, clock zones, latency) are distinguished strictly from unverified GUI waveforms, which are explicitly marked as requiring manual visual inspection.
 4. This work has not been submitted in substance or full to any other university or institute for the award of any degree or diploma.
 
-**Subhadip Dutta** (Roll: 10000224076)  
-**SK Mimraj** (Roll: 10000224077)  
+**Subhadip Dutta**  
+**SK Mimraj**  
 Department of Information Technology, MAKAUT, West Bengal  
 Date: September 2026  
 
@@ -48,7 +44,7 @@ Date: September 2026
 
 ## Certificate of the Supervisor
 
-This is to certify that the project report titled **"Homomorphic Encryption Using Quantum-dot Cellular Automata (QCA)"**, submitted by **Subhadip Dutta** (Roll: `10000224076`) and **SK Mimraj** (Roll: `10000224077`), students of the Department of Information Technology, Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal, for the award of the degree of Bachelor of Technology in Information Technology, is a bonafide record of research work carried out by them under my guidance and supervision.
+This is to certify that the project report titled **"Homomorphic Encryption Using Quantum-dot Cellular Automata (QCA)"**, submitted by **Subhadip Dutta** and **SK Mimraj**, students of the Department of Information Technology, Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal, for the award of the degree of Bachelor of Technology in Information Technology, is a bonafide record of research work carried out by them under my guidance and supervision.
 
 To the best of my knowledge, the thesis embodies original research contributions and fulfills all academic requirements prescribed by the University. The results embodied in this report have not been submitted to any other university or institute for the award of any other degree.
 

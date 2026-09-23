@@ -5,8 +5,8 @@
 **Project Year:** 2025 – 2026  
 **Supervision:** Dr. Jadav Chandra Das, Professor, Department of Information Technology  
 **Project Investigators:**  
-- Subhadip Dutta (Roll No: 10000224076, Reg No: 241000121037)  
-- SK Mimraj (Roll No: 10000224077, Reg No: 241000121038)  
+- Subhadip Dutta  
+- SK Mimraj  
 
 ---
 
