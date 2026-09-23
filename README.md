@@ -1,6 +1,6 @@
 # Homomorphic Encryption Using Quantum-dot Cellular Automata (QCA)
 
-**B.Tech Final-Year Capstone Project — Department of Information Technology**  
+**B.Tech Final-Year Project — Department of Information Technology**  
 **Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal, India**  
 **Supervision:** Dr. Jadav Chandra Das  
 **Student Investigators:**  
