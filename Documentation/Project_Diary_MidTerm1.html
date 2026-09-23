@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAKAUT B.Tech (IT) 7th Semester - Official Project Diary (MidTerm 1)</title>
+<style>
+  :root {
+    --primary: #0f172a;
+    --accent: #0284c7;
+    --border: #cbd5e1;
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+  }
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-dark);
+    background: #ffffff;
+    line-height: 1.5;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid #0f172a;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .univ-header {
+    text-align: center;
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+  }
+  .univ-header h1 {
+    font-size: 20px;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+  }
+  .univ-header h2 {
+    font-size: 16px;
+    margin: 0 0 5px 0;
+    color: #334155;
+    font-weight: 600;
+  }
+  .univ-header h3 {
+    font-size: 14px;
+    margin: 0;
+    color: #0284c7;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .project-title-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-left: 6px solid #0284c7;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+  }
+  .project-title-box .label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #64748b;
+    text-transform: uppercase;
+  }
+  .project-title-box .title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #0f172a;
+    margin-top: 2px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .meta-card {
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    padding: 12px 15px;
+    border-radius: 4px;
+  }
+  .meta-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #0284c7;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 4px;
+  }
+  .meta-card table {
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+  }
+  .meta-card td {
+    padding: 3px 0;
+  }
+  .meta-card td.lbl {
+    color: #64748b;
+    width: 35%;
+    font-weight: 500;
+  }
+  .meta-card td.val {
+    color: #0f172a;
+    font-weight: 600;
+  }
+  table.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+  table.log-table th {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 9px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    border: 1px solid #0f172a;
+  }
+  table.log-table td {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    vertical-align: top;
+  }
+  table.log-table tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .tag-done {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+  }
+  .rubric-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+  .rubric-table th {
+    background: #1e293b;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    border: 1px solid #1e293b;
+  }
+  .rubric-table td {
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+  }
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed #94a3b8;
+  }
+  .sig-box {
+    text-align: center;
+  }
+  .sig-line {
+    border-bottom: 1px solid #0f172a;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+  .sig-title {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0f172a;
+  }
+  .sig-sub {
+    font-size: 10px;
+    color: #64748b;
+  }
+  @media print {
+    body { padding: 0; background: none; }
+    .container { border: none; box-shadow: none; padding: 0; max-width: 100%; }
+    .page-break { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- UNIVERSITY HEADER -->
+  <div class="univ-header">
+    <h1>Maulana Abul Kalam Azad University of Technology (MAKAUT), West Bengal</h1>
+    <h2>Department of Information Technology</h2>
+    <h3>B.Tech 7th Semester — Capstone Project Work Diary (MidTerm 1)</h3>
+  </div>
+
+  <!-- PROJECT TITLE BOX -->
+  <div class="project-title-box">
+    <div class="label">Approved Capstone Project Title</div>
+    <div class="title">Homomorphic Encryption Using Quantum-dot Cellular Automata (QCA)</div>
+  </div>
+
+  <!-- GROUP & SUPERVISOR METADATA -->
+  <div class="meta-grid">
+    <div class="meta-card">
+      <h4>Student Investigators</h4>
+      <table>
+        <tr><td class="lbl">Student 1:</td><td class="val">Subhadip Dutta</td></tr>
+        <tr><td class="lbl">Department:</td><td class="val">Information Technology</td></tr>
+        <tr><td class="lbl">Student 2:</td><td class="val">SK Mimraj</td></tr>
+        <tr><td class="lbl">Department:</td><td class="val">Information Technology</td></tr>
+        <tr><td class="lbl">Semester:</td><td class="val">7th Semester (B.Tech)</td></tr>
+        <tr><td class="lbl">Academic Year:</td><td class="val">2026 – 2027</td></tr>
+      </table>
+    </div>
+
+    <div class="meta-card">
+      <h4>Project Supervision & Evaluation</h4>
+      <table>
+        <tr><td class="lbl">Supervisor:</td><td class="val">Dr. Jadav Chandra Das</td></tr>
+        <tr><td class="lbl">Designation:</td><td class="val">Faculty, Dept. of Information Technology</td></tr>
+        <tr><td class="lbl">Review Stage:</td><td class="val">MidTerm 1 Project Presentation</td></tr>
+        <tr><td class="lbl">Evaluation Date:</td><td class="val">24th September 2026 (11:00 AM)</td></tr>
+        <tr><td class="lbl">Venue:</td><td class="val">Room 324 (Panel 1) / Room 326 (Panel 2)</td></tr>
+        <tr><td class="lbl">CAD Tool:</td><td class="val">QCADesigner 2.0.3 & Python 3.10</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MIDTERM 1 REVIEW SUMMARY -->
+  <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 12px 16px; margin-bottom: 25px; border-radius: 4px;">
+    <h4 style="margin: 0 0 6px 0; font-size: 13px; color: #0284c7; text-transform: uppercase;">MidTerm 1 Progress Synopsis:</h4>
+    <p style="margin: 0; font-size: 11.5px; color: #334155; line-height: 1.5;">
+      All Phase-1 declared future work targets from the MAKAUT departmental baseline report have been 100% completed and validated ahead of schedule. The team has synthesized, clocked, and verified <strong>11 QCA circuit layouts</strong> in native QCADesigner 2.0.3, built a functioning <strong>pure-Python Homomorphic Encryption demonstration</strong> (Paillier addition/scaling & RSA multiplication), formulated a <strong>Six-Layer System Architecture</strong>, passed <strong>82/82 automated unit tests</strong>, and derived the <strong>Full-Wave Quantum Coherence Vector Master Equation</strong>.
+    </p>
+  </div>
+
+  <!-- WEEKLY CHRONOLOGICAL LOG ENTRIES -->
+  <h4 style="font-size: 14px; text-transform: uppercase; color: #0f172a; margin-bottom: 10px; border-bottom: 2px solid #0f172a; padding-bottom: 4px;">
+    Chronological Engineering Work Log & Guide Interaction Record
+  </h4>
+
+  <table class="log-table">
+    <thead>
+      <tr>
+        <th style="width: 14%;">Date & Week</th>
+        <th style="width: 25%;">Task & Milestone</th>
+        <th style="width: 35%;">Work Performed & Deliverables</th>
+        <th style="width: 16%;">Guide Remarks</th>
+        <th style="width: 10%;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>18-Sep-2026</strong><br><span style="color:#64748b;">Week 1</span></td>
+        <td><strong>Baseline Review & Environment Setup</strong></td>
+        <td>
+          • Reviewed MAKAUT Phase-1 report.<br>
+          • Verified QCADesigner 2.0.3 bistable engine parameters (GaAs/AlGaAs, 65 nm radius, 12,800 samples).<br>
+          • Established Git version control repository.
+        </td>
+        <td>Approved baseline targets and CAD environment.</td>
+        <td><span class="tag tag-done">Done</span></td>
+      </tr>
+      <tr>
+        <td><strong>19-Sep-2026</strong><br><span style="color:#64748b;">Week 2</span></td>
+        <td><strong>Primitive QCA Logic Gates Synthesis</strong></td>
+        <td>
+          • Synthesized 5-cell Majority Voter $M(A,B,C)$.<br>
+          • Generated AND (5 cells) with $-1.00$ bias and OR (5 cells) with $+1.00$ bias.<br>
+          • Designed 4-cell diagonal Inverter (NOT) and universal NAND / NOR (7 cells each).
+        </td>
+        <td>Verified truth tables and grid layout snapping.</td>
+        <td><span class="tag tag-done">Done</span></td>
+      </tr>
+      <tr>
+        <td><strong>20-Sep-2026</strong><br><span style="color:#64748b;">Week 3</span></td>
+        <td><strong>Dual-Rail Pipelined XOR Gate Synthesis</strong></td>
+        <td>
+          • Synthesized $A \oplus B = M(M(A,B,1), \overline{M(A,B,0)}, 0)$.<br>
+          • Balanced propagation delays across all 4 Clock Zones in 91 cells ($0.1130\ \mu\text{m}^2$).<br>
+          • Eliminated clock skew between OR and AND rails.
+        </td>
+        <td>Pipelining verified. 1.0 clock cycle latency confirmed.</td>
+        <td><span class="tag tag-done">Done</span></td>
+      </tr>
+      <tr>
+        <td><strong>21-Sep-2026</strong><br><span style="color:#64748b;">Week 4</span></td>
+        <td><strong>1-Bit Arithmetic: Half & Full Adder</strong></td>
+        <td>
+          • Built 91-cell Half Adder producing both SUM and CARRY.<br>
+          • Implemented Tougaw-Lent Full Adder (75 cells, $0.0693\ \mu\text{m}^2$) using 3 Majority Voters and 2 Inverters.<br>
+          • Validated in QCADesigner 2.0.3.
+        </td>
+        <td>Significant area compaction compared to CMOS.</td>
+        <td><span class="tag tag-done">Done</span></td>
+      </tr>
+      <tr>
+        <td><strong>22-Sep-2026</strong><br><span style="color:#64748b;">Week 5</span></td>
+        <td><strong>4-Bit RCA & 2×2 Multiplier Synthesis</strong></td>
+        <td>
+          • Cascaded 4 Full Adder stages into 4-bit RCA (315 cells, 4.0 cycles latency, $0.2917\ \mu\text{m}^2$).<br>
+          • Designed 2x2 Array Multiplier (91 cells, 1.0 cycle) evaluating 4 partial products with embedded adders.<br>
+          • Verified clean coordinate collision prevention.
+        </td>
+        <td>Excellent multi-bit horizontal cascading.</td>
+        <td><span class="tag tag-done">Done</span></td>
+      </tr>
+      <tr>
+        <td><strong>23-Sep-2026</strong><br><span style="color:#64748b;">Week 6</span></td>
+        <td><strong>Modular Arithmetic & HE Software Engine</strong></td>
+        <td>
+          • Designed 2-Bit Modulo-4 Adder (177 cells, 2.0 cycles) with lower delay synchronization line for $R_0$.<br>
+          • Implemented pure-Python Paillier & RSA homomorphic demonstration in <code>HE_Demo/</code>.<br>
+          • Verified ciphertext addition, scaling, and multiplication.
+        </td>
+        <td>Cryptographic equivalence 100% verified.</td>
+        <td><span class="tag tag-done">Done</span></td>
+      </tr>
+      <tr>
+        <td><strong>24-Sep-2026</strong><br><span style="color:#64748b;">Week 7 (Today)</span></td>
+        <td><strong>Full-Wave Quantum Analysis & Midterm 1</strong></td>
+        <td>
+          • Modeled quantum density matrix & Coherence Vector Master Equation on Bloch sphere.<br>
+          • Generated 5 scaling & CMOS benchmark plots ($R^2 = 0.985$).<br>
+          • Executed 82 automated verification tests (100% pass).<br>
+          • Prepared 18-slide MidTerm 1 presentation deck & logbook.
+        </td>
+        <td>All Phase-1 milestones achieved. Ready for Midterm 1.</td>
+        <td><span class="tag tag-done">Done</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- MIDTERM 1 EVALUATION RUBRIC TABLE -->
+  <h4 style="font-size: 14px; text-transform: uppercase; color: #0f172a; margin-bottom: 10px; border-bottom: 2px solid #0f172a; padding-bottom: 4px;">
+    MAKAUT MidTerm 1 Evaluation Rubric & Progress Assessment
+  </h4>
+
+  <table class="rubric-table">
+    <thead>
+      <tr>
+        <th style="width: 35%;">Evaluation Parameter</th>
+        <th style="width: 15%;">Max Marks</th>
+        <th style="width: 25%;">Target Achievement Status</th>
+        <th style="width: 25%;">Marks Awarded / Remarks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Problem Formulation & Literature Review</strong></td>
+        <td>20</td>
+        <td>Comprehensive (HE Bottleneck & Post-CMOS QCA)</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>2. Design Methodology & Six-Layer Architecture</strong></td>
+        <td>20</td>
+        <td>11 QCA Layouts, RNS & Paillier Mapping</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>3. Progress Achieved Against Schedule</strong></td>
+        <td>25</td>
+        <td>100% Phase-1 Future Work Completed Early</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>4. Presentation Quality & Viva Voce Performance</strong></td>
+        <td>20</td>
+        <td>18 Widescreen Slides, Complete Demo</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><strong>5. Maintenance of Official Project Diary / Logbook</strong></td>
+        <td>15</td>
+        <td>Weekly Chronological Logs & Guide Sign-off</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr style="background: #f1f5f9; font-weight: bold;">
+        <td>TOTAL SCORE (MIDTERM 1):</td>
+        <td>100</td>
+        <td>EXCELLENT PROGRESS</td>
+        <td>&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SIGNATURE BLOCKS -->
+  <div class="sig-grid">
+    <div class="sig-box">
+      <div class="sig-line"></div>
+      <div class="sig-title">Subhadip Dutta & SK Mimraj</div>
+      <div class="sig-sub">Signatures of Student Investigators<br>Date: 24/09/2026</div>
+    </div>
+
+    <div class="sig-box">
+      <div class="sig-line"></div>
+      <div class="sig-title">Dr. Jadav Chandra Das</div>
+      <div class="sig-sub">Signature of Project Supervisor<br>Department of IT, MAKAUT</div>
+    </div>
+
+    <div class="sig-box">
+      <div class="sig-line"></div>
+      <div class="sig-title">External / Panel Examiners</div>
+      <div class="sig-sub">Signatures of Panel Members<br>MidTerm 1 Evaluation Committee</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
