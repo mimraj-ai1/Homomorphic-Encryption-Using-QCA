@@ -1,0 +1,5 @@
+# Homomorphic Encryption (HE) Demonstration Requirements
+# The demonstration is self-contained and implemented using Python standard libraries
+# (math, secrets). Minimal external dependencies for extended analysis:
+numpy>=1.24.0
+pytest>=7.0.0
