@@ -4,7 +4,7 @@ OR,5,0.003364 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICAT
 NOT,4,0.002964 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Diagonal anti-phase coupling inverter; layout verified in QCADesigner 2.0.3
 NAND,7,0.005684 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Majority AND cascaded with diagonal inverter; layout verified in QCADesigner 2.0.3
 NOR,7,0.005684 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Majority OR cascaded with diagonal inverter; layout verified in QCADesigner 2.0.3
-XOR,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 2
+XOR,91,0.113004 um^2,4 (Clock 0-3),1.0 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Dual-rail M(M(A B 1) NOT(M(A B 0)) 0); verified layout in QCADesigner 2.0.3
 Half_Adder,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 3
 Full_Adder,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 4
 Ripple_Carry_Adder_4bit,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 5

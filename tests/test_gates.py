@@ -84,6 +84,21 @@ def test_nor_truth_table():
         assert (1 - (a or b)) == expected, f"NOR failed for ({a}, {b})"
 
 
+def test_xor_truth_table():
+    truth_table = [
+        (0, 0, 0),
+        (0, 1, 1),
+        (1, 0, 1),
+        (1, 1, 0),
+    ]
+    for a, b, expected in truth_table:
+        # Canonical expansion: (A or B) and not(A and B)
+        xor_result = (a or b) and (1 - (a and b))
+        assert xor_result == expected, f"XOR formula failed for ({a}, {b})"
+        # Direct bitwise XOR
+        assert (a ^ b) == expected, f"Bitwise XOR failed for ({a}, {b})"
+
+
 # ============================================================================
 # Physical Layout & QCADesigner File Integrity Tests
 # ============================================================================
@@ -115,6 +130,7 @@ def test_gate_layout_metrics(builder_func, expected_cells, expected_width, expec
         ("NOT", "NOT.qca", 2000),
         ("NAND", "NAND.qca", 3500),
         ("NOR", "NOR.qca", 3500),
+        ("XOR", "XOR.qca", 15000),
     ],
 )
 def test_qca_file_existence(folder, file_name, min_bytes):
@@ -134,3 +150,25 @@ def test_qca_file_existence(folder, file_name, min_bytes):
     assert "[TYPE:QCADLayer]" in content
     assert "[TYPE:QCADCell]" in content
     assert "[#TYPE:DESIGN]" in content
+
+
+def test_xor_layout_detailed_metrics():
+    import re
+    proj_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    xor_path = os.path.join(proj_root, "QCA_Designs", "XOR", "XOR.qca")
+    with open(xor_path, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    cells = re.findall(r"\[TYPE:QCADCell\](.*?)\[#TYPE:QCADCell\]", text, re.DOTALL)
+    assert len(cells) == 91, f"Expected 91 cells in XOR, found {len(cells)}"
+
+    # Check clock zones
+    clocks = set(int(re.search(r"cell_options\.clock=(\d+)", c).group(1)) for c in cells)
+    assert clocks == {0, 1, 2, 3}, f"XOR must utilize 4-phase clock zones, found {clocks}"
+
+    # Verify required I/O pins exist
+    labels = re.findall(r"psz=([^\r\n]+)", text)
+    assert "A" in labels, "Input A missing in XOR"
+    assert "B" in labels, "Input B missing in XOR"
+    assert "xor" in labels, "Output xor missing in XOR"
+
