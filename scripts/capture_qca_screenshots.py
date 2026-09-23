@@ -1,12 +1,15 @@
 """
-Automated QCADesigner Window Screenshot Capture Utility.
+Automated QCADesigner Canvas Screenshot Capture Utility.
 Opens each of the 11 QCA circuit layouts in QCADesigner 2.0.3,
-captures the full GUI window rendering using Win32 PrintWindow API,
-and saves high-resolution layout images into both the respective design folders
+captures the high-resolution canvas rendering using Win32 PrintWindow API,
+crops cleanly to the circuit layout (matching the exact canvas perspective
+with complete layout visibility and authentic black dotted grid background),
+and saves layout images into both the respective design folders
 and Documentation/screenshots/.
 """
 
 import os
+import re
 import subprocess
 import time
 import ctypes
@@ -32,11 +35,10 @@ def get_qcadesigner_window(pid: int):
     return found_hwnd
 
 
-def capture_window_to_image(hwnd) -> Image.Image:
-    """Captures a window HWND using PrintWindow into a PIL Image."""
-    rect = win32gui.GetWindowRect(hwnd)
-    width = rect[2] - rect[0]
-    height = rect[3] - rect[1]
+def capture_window_to_image(hwnd, width: int = 2200, height: int = 1100) -> Image.Image:
+    """Resizes window and captures using PrintWindow into a PIL Image."""
+    win32gui.MoveWindow(hwnd, 0, 0, width, height, True)
+    time.sleep(0.4)
 
     hwnd_dc = win32gui.GetWindowDC(hwnd)
     mfc_dc = win32ui.CreateDCFromHandle(hwnd_dc)
@@ -68,8 +70,58 @@ def capture_window_to_image(hwnd) -> Image.Image:
     return image
 
 
+def calculate_crop_box(circuit_name: str, qca_filepath: str):
+    """Calculates the optimal crop box for the circuit canvas."""
+    with open(qca_filepath, "r") as f:
+        text = f.read()
+
+    cell_blocks = text.split("[TYPE:QCADCell]")
+    coords = []
+    for b in cell_blocks[1:]:
+        mx = re.search(r"x=([0-9\.\-]+)", b)
+        my = re.search(r"y=([0-9\.\-]+)", b)
+        if mx and my:
+            coords.append((float(mx.group(1)), float(my.group(1))))
+
+    if not coords:
+        return (126, 118, 724, 519)
+
+    xs = [c[0] for c in coords]
+    ys = [c[1] for c in coords]
+    xmin, xmax = min(xs), max(xs)
+    ymin, ymax = min(ys), max(ys)
+
+    # Physical (nm) to screen canvas coordinates mapping
+    cx1 = 121 + xmin
+    cx2 = 121 + xmax
+    cy1 = 101 + ymin
+    cy2 = 101 + ymax
+
+    # Per-circuit bounding boxes tailored for clean framing
+    if circuit_name == "XOR":
+        return (126, 118, 724, 519)
+    elif circuit_name == "Half_Adder":
+        return (126, 118, 724, 519)
+    elif circuit_name in ("AND", "OR"):
+        return (max(124, int(cx1 - 55)), max(115, int(cy1 - 55)), int(cx2 + 55), int(cy2 + 55))
+    elif circuit_name == "NOT":
+        return (max(124, int(cx1 - 55)), max(115, int(cy1 - 55)), int(cx2 + 55), int(cy2 + 55))
+    elif circuit_name in ("NAND", "NOR"):
+        return (max(124, int(cx1 - 55)), max(115, int(cy1 - 55)), int(cx2 + 55), int(cy2 + 55))
+    elif circuit_name == "Full_Adder":
+        return (126, 118, 560, 460)
+    elif circuit_name == "Multiplier_2x2":
+        return (126, 118, 560, 450)
+    elif circuit_name == "Modular_Adder":
+        return (126, 118, 910, 520)
+    elif circuit_name == "Ripple_Carry_Adder_4bit":
+        return (126, 118, 1560, 460)
+    else:
+        return (max(124, int(cx1 - 55)), max(115, int(cy1 - 55)), int(cx2 + 65), int(cy2 + 55))
+
+
 def capture_circuit(circuit_name: str, relative_path: str, qcadesigner_bin: str, doc_dir: str):
-    """Opens a circuit in QCADesigner, captures the window, and saves screenshots."""
+    """Opens a circuit in QCADesigner, captures the window, crops to canvas, and saves screenshots."""
     abs_path = os.path.abspath(relative_path)
     file_basename = os.path.basename(relative_path)
 
@@ -83,26 +135,27 @@ def capture_circuit(circuit_name: str, relative_path: str, qcadesigner_bin: str,
         process.wait()
         return None
 
-    # Set window title explicitly to standard formatting
     win32gui.SetWindowText(hwnd, f"{file_basename} - QCADesigner")
     time.sleep(0.2)
 
-    image = capture_window_to_image(hwnd)
+    raw_image = capture_window_to_image(hwnd, width=2200, height=1100)
+    process.terminate()
+    process.wait()
+    time.sleep(0.2)
+
+    crop_box = calculate_crop_box(circuit_name, abs_path)
+    canvas_image = raw_image.crop(crop_box)
 
     # Save to circuit folder
     circuit_dir = os.path.dirname(abs_path)
     circuit_png = os.path.join(circuit_dir, f"{circuit_name}_layout.png")
-    image.save(circuit_png)
+    canvas_image.save(circuit_png)
 
     # Save to documentation folder
     doc_png = os.path.join(doc_dir, f"{circuit_name}_layout.png")
-    image.save(doc_png)
+    canvas_image.save(doc_png)
 
-    print(f"[OK] Captured: {circuit_name:25s} -> {doc_png} ({image.size[0]}x{image.size[1]})")
-
-    process.terminate()
-    process.wait()
-    time.sleep(0.3)
+    print(f"[OK] Captured: {circuit_name:25s} -> size={canvas_image.size} -> {doc_png}")
     return doc_png
 
 
@@ -127,7 +180,7 @@ def main():
     ]
 
     print("=" * 70)
-    print("CAPTURING QCADESIGNER 2.0.3 GUI SCREENSHOTS FOR ALL 11 CIRCUITS")
+    print("CAPTURING QCADESIGNER 2.0.3 CANVAS SCREENSHOTS FOR ALL 11 CIRCUITS")
     print("=" * 70)
 
     captured_files = []
@@ -137,7 +190,7 @@ def main():
             captured_files.append(out)
 
     print("=" * 70)
-    print(f"SUCCESS: Captured {len(captured_files)}/{len(circuits)} QCADesigner layout screenshots!")
+    print(f"SUCCESS: Captured {len(captured_files)}/{len(circuits)} layout screenshots!")
     print(f"Screenshots saved to: {doc_screenshots_dir}")
     print("=" * 70)
 
