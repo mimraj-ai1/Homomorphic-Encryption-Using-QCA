@@ -16,9 +16,9 @@
 
 ## Current Status
 
-- **Current Phase:** Phase 6 — 2×2 Binary Multiplier Implementation
+- **Current Phase:** Phase 7 — Modular Arithmetic ($(a + b) \pmod N$) Implementation
 - **Phase Status:** Complete
-- **Next Step:** Phase 7 — Modular Arithmetic ($(a + b) \pmod N$) Implementation
+- **Next Step:** Phase 8 — Homomorphic Encryption (HE) Python Demonstration
 
 ---
 
@@ -32,12 +32,12 @@
 | **Phase 3** | Half Adder Implementation | **COMPLETED** | 91-cell dual-rail layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 4** | Full Adder Implementation | **COMPLETED** | 75-cell Tougaw-Lent layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 5** | 4-bit Ripple Carry Adder (RCA) | **COMPLETED** | 315-cell 4-stage layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
-| **Phase 6** | 2×2 Binary Multiplier | **COMPLETED** | 91-cell layout verified in QCADesigner 2.0.3; 37/37 tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
-| **Phase 7** | Modular Arithmetic ($(a + b) \pmod N$) | PLANNED | Pending Phase 7 execution |
+| **Phase 6** | 2×2 Binary Multiplier | **COMPLETED** | 91-cell layout verified in QCADesigner 2.0.3; tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
+| **Phase 7** | Modular Arithmetic ($(a + b) \pmod N$) | **COMPLETED** | 177-cell layout verified in QCADesigner 2.0.3; 58/58 tests passing; GUI waveforms PENDING MANUAL VERIFICATION |
 | **Phase 8** | Homomorphic Encryption (HE) Python Demonstration | PLANNED | Pending Phase 8 execution |
 | **Phase 9** | QCA / HE Technical Architecture Integration | PLANNED | Pending Phase 9 execution |
-| **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | IN PROGRESS | Measured metrics for all 10 circuits logged to `Analysis/performance.csv` |
-| **Phase 11** | Automated Testing Suite (`pytest`) | IN PROGRESS | `test_gates.py`, `test_adders.py`, `test_multiplier.py` passing (37 tests) |
+| **Phase 10** | Quantitative Performance Characterization (`performance.csv`) | IN PROGRESS | Measured metrics for all 11 circuits logged to `Analysis/performance.csv` |
+| **Phase 11** | Automated Testing Suite (`pytest`) | IN PROGRESS | `test_gates.py`, `test_adders.py`, `test_multiplier.py`, `test_modular.py` passing (58 tests) |
 | **Phase 12** | Full-Wave Simulation Investigation | PLANNED | Pending Phase 12 execution |
 | **Phase 13** | Comprehensive Academic Thesis Documentation | PLANNED | Pending Phase 13 execution |
 | **Phase 14** | Presentation Content & Chronological Project Diary | PLANNED | Pending Phase 14 execution |
@@ -71,6 +71,7 @@
 | **Full Adder** | 75 | $318.0\text{ nm} \times 218.0\text{ nm}$ | $0.069324\ \mu\text{m}^2$ | 4 (Clock 0-3) | 1.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 | **4-bit RCA** | 315 | $1338.0\text{ nm} \times 218.0\text{ nm}$ | $0.291684\ \mu\text{m}^2$ | 4 (Clock 0-3) | 4.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 | **2×2 Multiplier** | 91 | $318.0\text{ nm} \times 238.0\text{ nm}$ | $0.075684\ \mu\text{m}^2$ | 4 (Clock 0-3) | 1.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
+| **Modular Adder (Mod 4)** | 177 | $658.0\text{ nm} \times 258.0\text{ nm}$ | $0.169764\ \mu\text{m}^2$ | 4 (Clock 0-3) | 2.00 cycles | PENDING MANUAL QCADESIGNER VERIFICATION |
 
 ---
 
