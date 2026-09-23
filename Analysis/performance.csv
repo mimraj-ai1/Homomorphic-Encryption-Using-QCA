@@ -1,0 +1,11 @@
+Circuit,Cell_Count,Area,Clock_Zones,Latency,Correctness,Notes
+AND,5,0.003364 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Majority voter M(A,B,0) with fixed C=-1.00; layout verified in QCADesigner 2.0.3
+OR,5,0.003364 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Majority voter M(A,B,1) with fixed C=+1.00; layout verified in QCADesigner 2.0.3
+NOT,4,0.002964 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Diagonal anti-phase coupling inverter; layout verified in QCADesigner 2.0.3
+NAND,7,0.005684 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Majority AND cascaded with diagonal inverter; layout verified in QCADesigner 2.0.3
+NOR,7,0.005684 um^2,1 (Clock 0),0.25 cycles,REQUIRES_MANUAL_QCADESIGNER_VERIFICATION,Majority OR cascaded with diagonal inverter; layout verified in QCADesigner 2.0.3
+XOR,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 2
+Half_Adder,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 3
+Full_Adder,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 4
+Ripple_Carry_Adder_4bit,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 5
+Multiplier_2x2,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,NOT_MEASURED,Planned for Phase 6
